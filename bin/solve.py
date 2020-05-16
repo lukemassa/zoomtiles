@@ -20,7 +20,7 @@ def main():
 
     else:
         solved = square.solve(args.n)
-        print("Efficieny of %s tiles is %s" % (args.n, solved))
+        print("Efficieny of %s tiles is %s (%s)" % (args.n, float(solved), str(solved)))
 
 
 if __name__ == "__main__":
