@@ -12,6 +12,7 @@ This got me thinking, what's the optimal efficiency for packing in n tiles of vi
 1. [Square packing in a square](https://en.wikipedia.org/wiki/Square_packing_in_a_square) make it seem like this problem is unsolved if you allow for angled squares. We want all the squares to be straight up and down.
 1. Given the above, we're going to assume the most efficient packing is a "regular" one, where there are even rows and columns, potentially missing spot.
     1. Given that the squares have to be straight up and down, I think this assumption is true, but I haven't proved it yet
+    2. This seems obvious, however the analogous result in [Sphere Packing](https://en.wikipedia.org/wiki/Kepler_conjecture) wasn't shown until 1998, it might not be :)
     
 ## Algorithm
 
