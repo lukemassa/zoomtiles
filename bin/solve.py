@@ -16,7 +16,8 @@ def main():
 
     if args.up_to:
         for i in range(1, args.n):
-            print("%s,%s" % (i, square.solve(i, as_fraction=args.as_fraction)))
+            # TODO: Refactor solve so it can return both as_fraction and not as_fraction
+            print("%s,%s,%s" % (i, square.solve(i, as_fraction=False), square.solve(i, as_fraction=True)))
 
     else:
         solved = square.solve(args.n, as_fraction=args.as_fraction)

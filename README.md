@@ -17,3 +17,8 @@ This got me thinking, what's the optimal efficiency for packing in n tiles of vi
 
 1. Find all the smallest row by column arrangements
 1. Of the above, determine the most efficient
+
+## Results
+
+Results of the first 1000 runs are in results/results.txt
+Looking at them, 
