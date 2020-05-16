@@ -20,5 +20,6 @@ This got me thinking, what's the optimal efficiency for packing in n tiles of vi
 
 ## Results
 
-Results of the first 1000 runs are in results/results.txt
-Looking at them, 
+As you can see in `results/results.txt`, it looks like the the best packing is the square one, just with entries missing.
+
+Given this, see lib/solve2.py for a simple solution.
