@@ -22,4 +22,12 @@ This got me thinking, what's the optimal efficiency for packing in n tiles of vi
 
 As you can see in `results/results.txt`, it looks like the the best packing is the square one, just with entries missing.
 
-Given this, see `lib/solve2.py` for a simple solution.
+Given this, see `lib/solve2.py`, essentially `n / nextPerfectSquare(n)` where `nextPerfectSquare` returns the smallest number >=n that is a perfect square.
+
+This stands to reason, in that the ratio will be how far off you are from being a perfect square.
+
+## Next steps
+
+1. Does the regularity assumption hold?
+    1. Can we prove that efficient packings don't for example misalign the squares?
+1. Is there a straightforward extension to rectangles (which is closer to the original question)
