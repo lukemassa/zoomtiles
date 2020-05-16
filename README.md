@@ -22,4 +22,4 @@ This got me thinking, what's the optimal efficiency for packing in n tiles of vi
 
 As you can see in `results/results.txt`, it looks like the the best packing is the square one, just with entries missing.
 
-Given this, see lib/solve2.py for a simple solution.
+Given this, see `lib/solve2.py` for a simple solution.
