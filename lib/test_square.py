@@ -21,7 +21,7 @@ class TestSquare(unittest.TestCase):
     def test_get_efficiency(self):
 
         def test_one(n, x, y, expected_efficiency):
-            actual_efficiency, _ = square.get_efficiency(n, x, y)
+            actual_efficiency = square.get_efficiency(n, x, y)
             self.assertEqual(actual_efficiency, expected_efficiency)
 
         test_one(1, 1, 1, 1)
@@ -54,15 +54,3 @@ class TestSquare(unittest.TestCase):
         test_one(3, (.5, 1))
         test_one(101, (.5, 1))
         test_one(109548, (.5, 1))
-
-    def test_get_ratio_as_fraction(self):
-        def test_one(x, y, expected_fraction):
-            actual_fraction = square.get_ratio_as_fraction(x, y)
-            self.assertEqual(actual_fraction, expected_fraction)
-
-        test_one(1, 1, "1")
-        test_one(1, 2, "1/2")
-        test_one(2, 4, "1/2")
-
-        with self.assertRaises(ZeroDivisionError):
-            test_one(1, 0, "")
