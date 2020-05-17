@@ -4,7 +4,8 @@
 Given a number n, how efficiently can the largest possible squares of n size fit into the unit square?
 """
 import argparse
-import square
+from fractions import Fraction
+import rectangle
 
 def main():
 
@@ -15,10 +16,12 @@ def main():
 
     if args.up_to:
         for i in range(1, args.n):
+            square = rectangle.Rectangle(Fraction(1, 1))
             solution = square.solve(i)
             print("%s,%s,%s" % (i, float(solution), str(solution)))
 
     else:
+        square = rectangle.Rectangle(Fraction(1, 1))
         solved = square.solve(args.n)
         print("Efficieny of %s tiles is %s (%s)" % (args.n, float(solved), str(solved)))
 

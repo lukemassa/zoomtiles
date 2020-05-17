@@ -1,56 +1,39 @@
 
 import unittest
+import rectangle
 import square
+from fractions import Fraction
 
 
 class TestSquare(unittest.TestCase):
 
-    def test_possible_dimensions(self):
+    def test_get_next_perfect_square(self):
 
-        def test_one(n, expected_dimensions):
-            result = list(square.possible_dimensions(n))
-            self.assertEqual(result, expected_dimensions)
+        def test_one(n, expected_next_perfect_square):
+            actual_next_perfect_square = square.get_next_perfect_square(n)
+            self.assertEqual(actual_next_perfect_square, expected_next_perfect_square)
 
-        test_one(0, [])
-        test_one(1, [(1,1)])
-        test_one(2, [(1,2)])
-        test_one(4, [(1,4), (2, 2)])
-        test_one(7, [(1,7), (2, 4), (3, 3)])
-        test_one(9, [(1,9), (2, 5), (3, 3)])
+        test_one(1, 1)
+        test_one(2, 4)
+        test_one(4, 4)
+        test_one(8, 9)
+        test_one(10, 16)
+        test_one(99, 100)
+        test_one(100, 100)
+        test_one(101, 121)
 
-    def test_get_efficiency(self):
 
-        def test_one(n, x, y, expected_efficiency):
-            actual_efficiency = square.get_efficiency(n, x, y)
-            self.assertEqual(actual_efficiency, expected_efficiency)
+    def test_results_same(self):
 
-        test_one(1, 1, 1, 1)
-        with self.assertRaises(AssertionError):
-            test_one(2, 1, 1, 1)
-        test_one(1, 2, 2, .25)
-        test_one(3, 2, 2, .75)
-        test_one(4, 2, 2, 1)
-        test_one(2, 2, 4, .125)
+        def test_one(n):
+            s = rectangle.Rectangle(Fraction(1, 1))
+            self.assertEqual(s.solve(n), square.solve(n))
 
-    def test_solve(self):
-
-        def test_one(n, expected_range, strict=False):
-            actual_solved = square.solve(n)
-            if strict:
-                self.assertLess(expected_range[0], actual_solved)
-                self.assertLess(actual_solved, expected_range[1])
-            else:
-                self.assertLessEqual(expected_range[0], actual_solved)
-                self.assertLessEqual(actual_solved, expected_range[1])
-
-        # Perfect squares are perfectly efficient
-        test_one(1, (1, 1))
-        test_one(9, (1, 1))
-
-        # Two is the worst at 50%
-        test_one(2, (.5, .5))
-
-        # Other random ones should all be strictly between .5 and 1
-        test_one(3, (.5, 1))
-        test_one(101, (.5, 1))
-        test_one(109548, (.5, 1))
+        test_one(1)
+        test_one(2)
+        test_one(4)
+        test_one(9)
+        test_one(12)
+        test_one(1000)
+        test_one(1001)
+        test_one(203980918)
